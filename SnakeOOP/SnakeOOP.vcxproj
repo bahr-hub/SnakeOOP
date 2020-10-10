@@ -145,6 +145,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="screen.cpp" />
     <ClCompile Include="snake.cpp" />
+    <ClCompile Include="Userinput.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="area.h" />
@@ -153,6 +154,7 @@
     <ClInclude Include="food.h" />
     <ClInclude Include="screen.h" />
     <ClInclude Include="snake.h" />
+    <ClInclude Include="Userinput.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

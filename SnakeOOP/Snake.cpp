@@ -2,6 +2,8 @@
 #include "snake.h"
 #include "area.h"
 #include "screen.h"
+#include "Userinput.h"
+#include "direction.h"
 
 
 snake::snake(area border)
@@ -85,6 +87,7 @@ void snake::nextMove()
 		body[i] = previousPoint;
 		previousPoint = temp;
 	}
+	
 }
 
 void snake::setSpeed()

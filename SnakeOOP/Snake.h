@@ -14,9 +14,12 @@ private:
 	int snakeLength;
 	int speedLevel;
 	COORD body[1000];
-	DIRECTION dir;
+	
 public:
+	DIRECTION dir;
+
 	snake(area border);
+
 	void init(area area1);
 	void print();
 	void clear();
