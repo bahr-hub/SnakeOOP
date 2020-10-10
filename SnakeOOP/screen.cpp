@@ -11,6 +11,11 @@ void Screen::setPosition(int X, int Y)
 	
 }
 
+void Screen::setColor(int i)
+{
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), i);
+}
+
 void Screen::clean()
 {
 	system("CLS");

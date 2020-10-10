@@ -1,36 +1,47 @@
 
 #include "snake.h"
+#include "area.h"
+#include "screen.h"
 
-void snake::init()
+
+snake::snake(area border)
+{
+	init(border);
+}
+
+void snake::init(area area1)
 {
 	dir = RIGHT;
 	snakeLength = 3;
+	
+
 	//score = 0;
 	//isFoodExest = false;
 	for (int i = 0; i < snakeLength; i++)
 	{
 		if (i == 0)
 		{
-			//body[0].X = width / 2;
-			//body[0].Y = hight / 2;
+			body[0].X = area1.width / 2;
+			body[0].Y = area1.hight / 2;
 			continue;
 		}
 		body[i] = { body[i - 1].X - 1, body[i - 1].Y };
 	}
 }
 
+
 void snake::print()
 {
 	for (int i = 0; i < snakeLength; i++)
 	{
-		//setPostion(body[i].X, body[i].Y);
+		Screen::setPosition(body[i].X, body[i].Y);
 		if (i == 0)
 		{
-			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 3);
+			Screen::setColor(3);
 			cout << "O";
 			continue;
 		}
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 6);
+		Screen::setColor(6);
 		cout << "o";
 	}
 }
@@ -39,7 +50,7 @@ void snake::clear()
 {
 	for (int i = 0; i < snakeLength; i++)
 	{
-		//setPostion(body[i].X, body[i].Y);
+		Screen::setPosition(body[i].X, body[i].Y);
 		cout << " ";
 	}
 }
@@ -96,3 +107,5 @@ void snake::chekeSelfCollision()
 		}
 	}
 }
+
+

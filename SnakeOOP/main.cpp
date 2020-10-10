@@ -9,5 +9,7 @@ int main()
 	area area1 = screen.getSize();
 	Border border(area1);
 	border.draw();
-	return 0;
+	snake snake1(area1);
+	snake1.print();
+		return 0;
 }
