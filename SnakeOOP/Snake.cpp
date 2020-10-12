@@ -1,14 +1,28 @@
 
 #include "snake.h"
-#include "area.h"
-#include "screen.h"
-#include "Userinput.h"
-#include "direction.h"
+
 
 
 snake::snake(area border)
 {
 	init(border);
+}
+
+int snake::getSnakeLength()
+{
+	return snakeLength;
+}
+
+void snake::foodEaten()
+{
+	snakeLength += 4;
+}
+
+
+
+COORD* snake::getBody()
+{
+	return body;
 }
 
 void snake::init(area area1)
@@ -18,7 +32,7 @@ void snake::init(area area1)
 	
 
 	//score = 0;
-	//isFoodExest = false;
+	
 	for (int i = 0; i < snakeLength; i++)
 	{
 		if (i == 0)
