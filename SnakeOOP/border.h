@@ -1,6 +1,7 @@
 #pragma once
 #include <Windows.h>
 #include "area.h"
+#include "snake.h"
 
 class Border
 {
@@ -13,7 +14,7 @@ public:
 	Border(area screenSize );
 	Border(int width, int hight);
 	void draw();
-	
+	void checkbordercollison(snake& allsnake);
 	
 };
 

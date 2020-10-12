@@ -20,13 +20,16 @@ private:
 	
 
 	
+
+	
 	
 public:
 	COORD* getBody();
 	DIRECTION dir;
+	void setBody(int index, COORD value);
 
 	snake(area border);
-
+	bool gameOver;
 	int getSnakeLength();
 	void foodEaten();
 	void init(area area1);
@@ -35,6 +38,7 @@ public:
 	void nextMove();
 	void setSpeed();
 	void chekeSelfCollision();
+	
 	
 
 };

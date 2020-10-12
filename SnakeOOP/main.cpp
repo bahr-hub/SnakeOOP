@@ -16,18 +16,19 @@ int main()
 	food food1;
 
 	screen.hideCursor();
-	
 	border.draw();
 	snake1.print();
-	while (true)
+	while (snake1.gameOver =true)
 	{
 		snake1.dir = inPt.Khit(snake1.dir);
 		snake1.nextMove();
 		snake1.print();
 		food1.addFood(area1, snake1);
 		food1.checkfoodeat(snake1);
+		snake1.chekeSelfCollision();
+		border.checkbordercollison(snake1);
 		snake1.print();
-		Sleep(100 );
+		Sleep(50 );
 	}
 	
 	/*ShowConsoleCursor(false);

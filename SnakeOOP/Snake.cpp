@@ -25,6 +25,14 @@ COORD* snake::getBody()
 	return body;
 }
 
+void snake::setBody(int index, COORD value)
+{
+	body[index].X = value.X;
+	body[index].Y = value.Y;
+
+
+}
+
 void snake::init(area area1)
 {
 	dir = RIGHT;
@@ -115,14 +123,12 @@ void snake::chekeSelfCollision()
 	{
 		if ((body[0].X == body[i].X && body[0].Y == body[i].Y))
 		{
-			//gameOver = true;
+			gameOver = true;
 			system("CLS");
 
-			//setPostion(50, 4);
+			Screen::setPosition(50, 4);
 			cout << "Gameover" << endl;
 			system("pause");
 		}
 	}
 }
-
-
