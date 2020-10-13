@@ -1,4 +1,3 @@
-
 #include "snake.h"
 
 
@@ -123,7 +122,7 @@ void snake::setSpeed(Userinput speed)
 	Sleep(500 / speed.speedlevel);
 }
 
-void snake::chekeSelfCollision(Gameover gameover)
+void snake::chekeSelfCollision(Gameover& gameover)
 {
 	for (int i = 1; i < snakeLength; i++)
 	{

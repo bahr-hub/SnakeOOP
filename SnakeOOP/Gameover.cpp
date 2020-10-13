@@ -1,7 +1,8 @@
 #include "Gameover.h"
 
-bool Gameover::gameContine(area area2,snake snake2)
+bool Gameover::gameContine(area area2)
 {
+	
 	if (gameOver == true)
 	{
 		system("CLS");
@@ -25,10 +26,7 @@ bool Gameover::gameContine(area area2,snake snake2)
 			cout << endl;
 			system("pause");
 
-			for (int i = 0; i < snake2.getSnakeLength(); i++)
-			{
-				snake2.getBodyElement(i) = { NULL };
-			}
+			
 			/*initScreen();
 			getusername();
 			getspeedLevel();

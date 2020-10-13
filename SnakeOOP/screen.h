@@ -1,7 +1,6 @@
 #pragma once
 #include <Windows.h>
 #include "area.h"
-#include "snake.h"
 class Screen
 {
 public:
