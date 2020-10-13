@@ -142,6 +142,7 @@
     <ClCompile Include="area.cpp" />
     <ClCompile Include="border.cpp" />
     <ClCompile Include="food.cpp" />
+    <ClCompile Include="Gameover.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="screen.cpp" />
     <ClCompile Include="snake.cpp" />
@@ -152,6 +153,7 @@
     <ClInclude Include="border.h" />
     <ClInclude Include="direction.h" />
     <ClInclude Include="food.h" />
+    <ClInclude Include="Gameover.h" />
     <ClInclude Include="screen.h" />
     <ClInclude Include="snake.h" />
     <ClInclude Include="Userinput.h" />

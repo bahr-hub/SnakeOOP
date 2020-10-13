@@ -2,6 +2,8 @@
 #include <conio.h>
 
 
+
+
 void Screen::setPosition(int X, int Y)
 {
 	COORD coord;

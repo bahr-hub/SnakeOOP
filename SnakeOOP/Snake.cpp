@@ -123,13 +123,13 @@ void snake::setSpeed(Userinput speed)
 	Sleep(500 / speed.speedlevel);
 }
 
-void snake::chekeSelfCollision()
+void snake::chekeSelfCollision(Gameover gameover)
 {
 	for (int i = 1; i < snakeLength; i++)
 	{
 		if ((body[0].X == body[i].X && body[0].Y == body[i].Y))
 		{
-			gameOver = true;
+			gameover.gameOver = true;
 			system("CLS");
 
 			Screen::setPosition(50, 4);

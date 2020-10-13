@@ -4,6 +4,7 @@
 #include "Userinput.h"
 #include "food.h"
 #include "area.h"
+#include "Gameover.h"
 
 
 int main()
@@ -14,57 +15,31 @@ int main()
 	Border border(area1);
 	snake snake1(area1);
 	food food1;
+	Gameover gameover;
 
 	inPt.getUsername();
 	inPt.getspeedLevel();
 	screen.hideCursor();
 	border.draw();
 	snake1.print();
-	while (snake1.gameOver =true)
+	while (gameover.gameOver =false)
 	{
 		snake1.dir = inPt.Khit(snake1.dir);
 		snake1.nextMove();
 		food1.addFood(area1, snake1);
 		food1.checkfoodeat(snake1);
-		snake1.chekeSelfCollision();
+		snake1.chekeSelfCollision(gameover);
 		border.checkbordercollison(snake1);
 		snake1.clear();
 		snake1.printScore(area1);
 		snake1.print();
 		snake1.setSpeed(inPt);
-	}
-	
-	/*ShowConsoleCursor(false);
-	initScreen();
-	getusername();
-	getspeedLevel();
-	drawborder();
-	drawBloks();
-	initsnake();
-	printSnake();
-
-	while (gameOver == false)
-	{
-		checkuserinput();
-
-		addfood();
-		snakenextmove();
-
-		checkfoodeat();
-		checkselfcollision();
-		checkbordercollison();
-
-		printSnake();
-		printScore();
-
-		Sleep(500 / speedlevel);
-
-		bool countinio = gameContine();
-		if (countinio == false)
+	//	bool continueo = gameover.gameContine(area1,snake1);
+		/*if (continueo == false)
 		{
 			break;
-		}
-	}*/
-
+		}*/
+	}
+	
 		return 0;
 }

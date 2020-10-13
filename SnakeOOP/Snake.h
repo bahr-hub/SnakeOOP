@@ -6,6 +6,7 @@
 #include "screen.h"
 #include "Userinput.h"
 #include "direction.h"
+#include "Gameover.h"
 using namespace std;
 
 
@@ -25,13 +26,12 @@ private:
 public:
 	int score ;
 	COORD getBodyElement(int index);
-	//	COORD* getBody();
 	DIRECTION dir;
-	void setBody(int index, COORD value);
-
 	snake(area border);
-	bool gameOver;
+
+	
 	int getSnakeLength();
+	void setBody(int index, COORD value);
 	void foodEaten();
 	void init(area area1);
 	void print();
@@ -39,7 +39,7 @@ public:
 	void clear();
 	void nextMove();
 	void setSpeed(Userinput speed);
-	void chekeSelfCollision();
+	void chekeSelfCollision(Gameover gameover);
 	
 	
 

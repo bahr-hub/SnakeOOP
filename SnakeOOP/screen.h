@@ -1,6 +1,7 @@
 #pragma once
 #include <Windows.h>
 #include "area.h"
+#include "snake.h"
 class Screen
 {
 public:
@@ -9,9 +10,11 @@ public:
 	int hight;
 	area getSize();
 
+	
 	static void setPosition(int X, int Y);
 	static void setColor(int i);
 	void hideCursor();
+
 private:
 
 	HANDLE handler;

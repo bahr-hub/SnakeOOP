@@ -14,7 +14,7 @@ public:
 	bool isFoodExest;
 	COORD postion;
 	void addFood(area screensize, snake allsnake);
-	void checkfoodeat(snake& allsnake1);
+	void checkfoodeat( snake& allsnake1);
 
 private:
 	void initFood();
