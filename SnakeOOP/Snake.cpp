@@ -20,9 +20,9 @@ void snake::foodEaten()
 
 
 
-COORD* snake::getBody()
+COORD snake::getBodyElement(int index)
 {
-	return body;
+	return body[index];
 }
 
 void snake::setBody(int index, COORD value)

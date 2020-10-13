@@ -24,27 +24,27 @@ Border::Border(int width, int hight)
 
 void Border::draw()
 {
-	for (int i = 0; i < width; i++) // up
+	for (int i = 0; i <= width; i++) // up
 	{
 		cout << "-";
 	}
 	cout << endl;
 
-	for (int i = 1; i < hight - 1; i++) // right
+	for (int i = 1; i < hight ; i++) // right
 	{
 		Screen::setPosition (0, i);
 		cout << "|";
 	}
 
-	for (int i = 1; i < hight - 1; i++) // left
+	for (int i = 1; i < hight ; i++) // left
 	{
 		
-		Screen::setPosition(width - 1, i);
+		Screen::setPosition(width , i);
 		cout << "|";
 	}
 
-	Screen::setPosition(0, hight - 1);
-	for (int i = 0; i < width; i++) //down
+	Screen::setPosition(0, hight );
+	for (int i = 0; i <= width; i++) //down
 	{
 		cout << "-";
 	}
@@ -53,6 +53,7 @@ void Border::draw()
 
 void Border::checkbordercollison( snake& allsnake)
 {
+	/*
 	if (allsnake.getBody()[0].Y > hight - 2) //downe border 
 	{
 		allsnake.getBody()[0].Y = 1;
@@ -68,34 +69,34 @@ void Border::checkbordercollison( snake& allsnake)
 	else if (allsnake.getBody()[0].X <= 0) // left birder 
 	{
 		allsnake.getBody()[0].X = width - 2;
-	}
+	}*/
 
-	/*if (allsnake.getBody()[0].Y > hight - 3) //downe border 
+	if (allsnake.getBodyElement(0).Y > hight - 1) //downe border 
 	{
 		COORD value1;
+		value1.X = allsnake.getBodyElement(0).X;
 		value1.Y = 1;
-		value1.X = allsnake.getBody()[0].X;
 		allsnake.setBody(0, value1);
 	}
-	else if (allsnake.getBody()[0].Y <= 1) // uper border 
+	else if (allsnake.getBodyElement(0).Y < 1) // uper border 
 	{
 		COORD value1;
-		value1.X = allsnake.getBody()[0].X;
-		value1.Y = hight - 2;
+		value1.X = allsnake.getBodyElement(0).X;
+		value1.Y = hight - 1;
 		allsnake.setBody(0,value1) ;
 	}
-	else if (allsnake.getBody()[0].X >= width - 2) // right border
+	else if (allsnake.getBodyElement(0).X > width - 1) // right border
 	{
 		COORD value1;
 		value1.X = 1;
-		value1.Y = allsnake.getBody()[0].Y;
+		value1.Y = allsnake.getBodyElement(0).Y;
 		allsnake.setBody(0, value1);
 	}
-	else if (allsnake.getBody()[0].X <= 1) // left birder 
+	else if (allsnake.getBodyElement(0).X < 1) // left birder 
 	{
 		COORD value1;
-		value1.Y = allsnake.getBody()[0].Y;
-		value1.X = width - 2;
+		value1.X = width - 1;
+		value1.Y = allsnake.getBodyElement(0).Y;
 		allsnake.setBody(0, value1);
-	}*/
+	}
 }

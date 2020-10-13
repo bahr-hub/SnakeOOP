@@ -24,7 +24,8 @@ private:
 	
 	
 public:
-	COORD* getBody();
+	COORD getBodyElement(int index);
+	//	COORD* getBody();
 	DIRECTION dir;
 	void setBody(int index, COORD value);
 

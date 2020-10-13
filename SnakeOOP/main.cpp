@@ -22,11 +22,11 @@ int main()
 	{
 		snake1.dir = inPt.Khit(snake1.dir);
 		snake1.nextMove();
-		snake1.print();
 		food1.addFood(area1, snake1);
 		food1.checkfoodeat(snake1);
 		snake1.chekeSelfCollision();
 		border.checkbordercollison(snake1);
+		snake1.clear();
 		snake1.print();
 		Sleep(50 );
 	}

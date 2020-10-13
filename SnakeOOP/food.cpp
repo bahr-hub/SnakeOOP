@@ -23,7 +23,7 @@ void food::addFood(area screensize,snake allsnake)
 
 		for (int i = 0; i < allsnake.getSnakeLength(); i++)
 		{
-			if ((postion.X == allsnake.getBody()[i].X) && (postion.Y == allsnake.getBody()[i].Y))
+			if ((postion.X == allsnake.getBodyElement(i).X) && (postion.Y == allsnake.getBodyElement(i).Y))
 			{
 				isValedFood = false;
 				return;
@@ -45,7 +45,7 @@ void food::addFood(area screensize,snake allsnake)
 void food::checkfoodeat(snake& allsnake1)
 {
 
-	if ((postion.X == allsnake1.getBody()[0].X) && (postion.Y == allsnake1.getBody()[0].Y))
+	if ((postion.X == allsnake1.getBodyElement(0).X) && (postion.Y == allsnake1.getBodyElement(0).Y))
 	{
 		isFoodExest = false;
 		allsnake1.foodEaten();
