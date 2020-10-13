@@ -13,7 +13,6 @@ Border::Border(area screenSize)
 {
 	width = screenSize.width;
 	hight = screenSize.hight;
-
 }
 
 Border::Border(int width, int hight)
@@ -24,26 +23,27 @@ Border::Border(int width, int hight)
 
 void Border::draw()
 {
+	system("CLS");
 	for (int i = 0; i <= width; i++) // up
 	{
 		cout << "-";
 	}
 	cout << endl;
 
-	for (int i = 1; i < hight ; i++) // right
+	for (int i = 1; i < hight; i++) // right
 	{
-		Screen::setPosition (0, i);
+		Screen::setPosition(0, i);
 		cout << "|";
 	}
 
-	for (int i = 1; i < hight ; i++) // left
+	for (int i = 1; i < hight; i++) // left
 	{
-		
-		Screen::setPosition(width , i);
+
+		Screen::setPosition(width, i);
 		cout << "|";
 	}
 
-	Screen::setPosition(0, hight );
+	Screen::setPosition(0, hight);
 	for (int i = 0; i <= width; i++) //down
 	{
 		cout << "-";
@@ -51,26 +51,8 @@ void Border::draw()
 	cout << endl;
 }
 
-void Border::checkbordercollison( snake& allsnake)
+void Border::checkbordercollison(snake& allsnake)
 {
-	/*
-	if (allsnake.getBody()[0].Y > hight - 2) //downe border 
-	{
-		allsnake.getBody()[0].Y = 1;
-	}
-	else if (allsnake.getBody()[0].Y <= 0) // uper border 
-	{
-		allsnake.getBody()[0].Y = hight - 2;
-	}
-	else if (allsnake.getBody()[0].X >= width - 1) // right border
-	{
-		allsnake.getBody()[0].X = 1;
-	}
-	else if (allsnake.getBody()[0].X <= 0) // left birder 
-	{
-		allsnake.getBody()[0].X = width - 2;
-	}*/
-
 	if (allsnake.getBodyElement(0).Y > hight - 1) //downe border 
 	{
 		COORD value1;
@@ -83,7 +65,7 @@ void Border::checkbordercollison( snake& allsnake)
 		COORD value1;
 		value1.X = allsnake.getBodyElement(0).X;
 		value1.Y = hight - 1;
-		allsnake.setBody(0,value1) ;
+		allsnake.setBody(0, value1);
 	}
 	else if (allsnake.getBodyElement(0).X > width - 1) // right border
 	{

@@ -39,3 +39,23 @@ DIRECTION Userinput::Khit(DIRECTION dir)
 	}
 	return dir;
 }
+
+void Userinput::getUsername()
+{
+	cout << "Enter your name: " << endl;
+	cin >> name;
+}
+
+void Userinput::getspeedLevel()
+{
+	cout << "Enter the Speed level from 1 to 10: ";
+	cin >> speedlevel;
+	if (speedlevel < 1)
+	{
+		speedlevel = 1;
+	}
+	else if (speedlevel > 10)
+	{
+		speedlevel = 10;
+	}
+}

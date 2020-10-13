@@ -13,7 +13,6 @@ class snake
 {
 private:
 	int length;
-	int speed;
 	int speedLevel;
 	int snakeLength;
 	COORD body[1000];
@@ -24,6 +23,7 @@ private:
 	
 	
 public:
+	int score ;
 	COORD getBodyElement(int index);
 	//	COORD* getBody();
 	DIRECTION dir;
@@ -35,9 +35,10 @@ public:
 	void foodEaten();
 	void init(area area1);
 	void print();
+	void printScore(area area1);
 	void clear();
 	void nextMove();
-	void setSpeed();
+	void setSpeed(Userinput speed);
 	void chekeSelfCollision();
 	
 	

@@ -15,6 +15,8 @@ int main()
 	snake snake1(area1);
 	food food1;
 
+	inPt.getUsername();
+	inPt.getspeedLevel();
 	screen.hideCursor();
 	border.draw();
 	snake1.print();
@@ -27,8 +29,9 @@ int main()
 		snake1.chekeSelfCollision();
 		border.checkbordercollison(snake1);
 		snake1.clear();
+		snake1.printScore(area1);
 		snake1.print();
-		Sleep(50 );
+		snake1.setSpeed(inPt);
 	}
 	
 	/*ShowConsoleCursor(false);

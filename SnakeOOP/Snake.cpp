@@ -16,6 +16,7 @@ int snake::getSnakeLength()
 void snake::foodEaten()
 {
 	snakeLength += 4;
+	score = score + 10;
 }
 
 
@@ -37,9 +38,7 @@ void snake::init(area area1)
 {
 	dir = RIGHT;
 	snakeLength = 3;
-	
-
-	//score = 0;
+	score = 0;
 	
 	for (int i = 0; i < snakeLength; i++)
 	{
@@ -112,9 +111,16 @@ void snake::nextMove()
 	
 }
 
-void snake::setSpeed()
+void snake::printScore(area area1)
 {
-	Sleep(500 / speedLevel);
+	Screen::setPosition(0, area1.hight + 2);
+	Screen::setColor(7);;
+	cout << "Score:  " << score;
+}
+
+void snake::setSpeed(Userinput speed)
+{
+	Sleep(500 / speed.speedlevel);
 }
 
 void snake::chekeSelfCollision()
