@@ -38,29 +38,32 @@ int main()
 		snake1.printScore(area1);
 		snake1.print();
 		snake1.setSpeed(inPt);
-		bool continueo = gameover.gameContine(area1);
-			/*if (continueo == true)
+		if (snake1.chekeSelfCollision(gameover) == true)
+		{
+			bool continueo = gameover.gameContine(area1);
+			if (continueo == true)
 			{
+				system("CLS");
 				inPt.getUsername();
 				inPt.getspeedLevel();
+				snake1.init(area1);
 				screen.hideCursor();
+				food1.initFood();
 				border.draw();
 				snake1.print();
 				gameover.gameOver = false;
-
 				for (int i = 0; i < snake1.getSnakeLength(); i++)
 				{
 					snake1.getBodyElement(i) = { NULL };
 				}
+
 			}
 
 			else if (continueo == false)
 			{
 				break;
-			}*/
-		
-
-
+			}
+		}
 	}
 
 	return 0;

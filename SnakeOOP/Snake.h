@@ -39,7 +39,7 @@ public:
 	void clear();
 	void nextMove();
 	void setSpeed(Userinput speed);
-	void chekeSelfCollision(Gameover& gameover);
+	bool chekeSelfCollision(Gameover& gameover);
 	
 	
 

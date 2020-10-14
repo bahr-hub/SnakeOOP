@@ -15,9 +15,10 @@ public:
 	COORD postion;
 	void addFood(area screensize, snake allsnake);
 	void checkfoodeat( snake& allsnake1);
+	void initFood();
 
 private:
-	void initFood();
+	
 	
 
 };

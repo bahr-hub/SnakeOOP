@@ -122,7 +122,7 @@ void snake::setSpeed(Userinput speed)
 	Sleep(500 / speed.speedlevel);
 }
 
-void snake::chekeSelfCollision(Gameover& gameover)
+bool snake::chekeSelfCollision(Gameover& gameover)
 {
 	for (int i = 1; i < snakeLength; i++)
 	{
@@ -134,6 +134,7 @@ void snake::chekeSelfCollision(Gameover& gameover)
 			Screen::setPosition(50, 4);
 			cout << "Gameover" << endl;
 			system("pause");
+			return true;
 		}
 	}
 }
